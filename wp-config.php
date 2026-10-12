@@ -25,6 +25,13 @@ define( 'WP_HTTP_BLOCK_EXTERNAL', false );
 @ini_set( 'mysql.connect_timeout', 5 );
 @ini_set( 'default_socket_timeout', 5 );
 
+// Gunakan metode akses filesystem langsung tanpa meminta FTP
+define( 'FS_METHOD', 'direct' );
+
+// (Opsional) Nonaktifkan fitur install/update/delete file langsung dari admin
+// karena di Vercel perubahan file harus lewat Git deployment
+define( 'DISALLOW_FILE_MODS', true );
+
 // Matikan pengecekan update otomatis yang menahan loading admin
 define( 'WP_AUTO_UPDATE_CORE', false );
 define( 'CORE_UPGRADE_SKIP_NEW_BUNDLED', true );

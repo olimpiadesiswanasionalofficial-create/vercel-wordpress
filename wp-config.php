@@ -87,7 +87,10 @@ $table_prefix = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define( 'WP_DEBUG', true );
+// Matikan tampilan debug ke browser
+define( 'WP_DEBUG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+@ini_set( 'display_errors', 0 );
 
 // Vercel
 define( 'WP_TEMP_DIR', '/tmp' );

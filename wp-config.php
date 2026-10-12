@@ -3,6 +3,16 @@
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
     $_SERVER['HTTPS'] = 'on';
 
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+
+mysqli_report(MYSQLI_REPORT_OFF);
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+
 define( 'WP_HOME', 'https://osn-ujian-gamma.vercel.app' );
 define( 'WP_SITEURL', 'https://osn-ujian-gamma.vercel.app' );
 	

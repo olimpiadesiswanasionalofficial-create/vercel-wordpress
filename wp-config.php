@@ -15,6 +15,10 @@ define( 'WP_HTTP_BLOCK_EXTERNAL', false );
 // Set batas eksekusi script PHP
 @ini_set( 'max_execution_time', 10 );
 
+// Pasang batas timeout koneksi ke MySQL maksimal 5 detik
+@ini_set('mysql.connect_timeout', 5);
+@ini_set('default_socket_timeout', 5);
+
 /**
  * The base configuration for WordPress
  *

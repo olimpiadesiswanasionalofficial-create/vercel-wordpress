@@ -1,4 +1,11 @@
 <?php
+// Nonaktifkan uncaught exception mysqli agar WordPress dapat mendeteksi database kosong tanpa crash
+mysqli_report(MYSQLI_REPORT_OFF);
+
+// Matikan notifikasi deprecated PHP 8.2+
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
+ini_set('display_errors', '0');
+
 /**
  * The base configuration for WordPress
  *

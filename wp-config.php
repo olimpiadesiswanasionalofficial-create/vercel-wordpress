@@ -35,7 +35,7 @@ define( 'DB_HOST', getenv('DB_HOST') ?: '127.0.0.1' );
 define( 'DB_CHARSET', 'utf8mb4' );
 
 /** The Database Collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+define( 'DB_COLLATE', 'utf8mb4_general_ci' );
 
 // Wajib: TiDB Cloud mewajibkan koneksi terenkripsi
 define( 'MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL );

@@ -29,7 +29,7 @@ define( 'DB_USER', 'vercel' );
 define( 'DB_PASSWORD', 'Vercel007' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'worksdomain.nl' );
+define( 'DB_HOST', 'https://osn-ujian-gamma.vercel.app/' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );

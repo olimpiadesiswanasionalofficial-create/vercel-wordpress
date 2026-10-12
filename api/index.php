@@ -10,6 +10,14 @@ $extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
 $staticExtensions = ['css', 'js', 'jpg', 'jpeg', 'png', 'gif', 'svg', 'ico', 'webp', 'woff', 'woff2', 'ttf', 'eot'];
 
 if (in_array($extension, $staticExtensions, true) && file_exists($file)) {
+    // Tambahkan header caching 7 hari untuk file statis
+    header('Cache-Control: public, max-age=604800, immutable');
+    return false;
+}
+$extension = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+$staticExtensions = ['css', 'js', 'jpg', 'jpeg', 'png', 'gif', 'svg', 'ico', 'webp', 'woff', 'woff2', 'ttf', 'eot'];
+
+if (in_array($extension, $staticExtensions, true) && file_exists($file)) {
     return false;
 }
 

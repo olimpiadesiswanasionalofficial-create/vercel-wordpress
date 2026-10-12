@@ -25,6 +25,13 @@ define( 'WP_HTTP_BLOCK_EXTERNAL', false );
 @ini_set( 'mysql.connect_timeout', 5 );
 @ini_set( 'default_socket_timeout', 5 );
 
+// Matikan pengecekan update otomatis yang menahan loading admin
+define( 'WP_AUTO_UPDATE_CORE', false );
+define( 'CORE_UPGRADE_SKIP_NEW_BUNDLED', true );
+
+// Blokir request background eksternal yang tidak diperlukan
+define( 'WP_HTTP_BLOCK_EXTERNAL', false );
+
 // 5. Direktori Sementara Vercel
 define( 'WP_TEMP_DIR', '/tmp' );
 

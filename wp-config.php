@@ -1,4 +1,8 @@
 <?php
+// Deteksi SSL dari Reverse Proxy Vercel agar tidak terjadi 302 redirect loop
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+	
 // Nonaktifkan uncaught exception mysqli agar WordPress dapat mendeteksi database kosong tanpa crash
 mysqli_report(MYSQLI_REPORT_OFF);
 

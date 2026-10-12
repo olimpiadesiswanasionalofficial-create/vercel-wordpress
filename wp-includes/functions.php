@@ -1,4 +1,14 @@
 <?php
+// Matikan widget berita WordPress dan quick draft di dashboard
+add_action('wp_dashboard_setup', function () {
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');   // Berita WordPress
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side'); // Quick Draft
+});
+
+// Hilangkan pengecekan update berkala di admin
+remove_action('admin_init', '_maybe_update_core');
+remove_action('admin_init', '_maybe_update_plugins');
+remove_action('admin_init', '_maybe_update_themes');
 /**
  * Main WordPress API
  *

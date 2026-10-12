@@ -6,6 +6,15 @@ mysqli_report(MYSQLI_REPORT_OFF);
 error_reporting(E_ALL & ~E_DEPRECATED & ~E_NOTICE);
 ini_set('display_errors', '0');
 
+// Matikan cron background otomatis saat user membuka web
+define( 'DISABLE_WP_CRON', true );
+
+// Batasi timeout koneksi HTTP eksternal WordPress
+define( 'WP_HTTP_BLOCK_EXTERNAL', false );
+
+// Set batas eksekusi script PHP
+@ini_set( 'max_execution_time', 10 );
+
 /**
  * The base configuration for WordPress
  *

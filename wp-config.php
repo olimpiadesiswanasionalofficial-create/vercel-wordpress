@@ -2,6 +2,9 @@
 // Deteksi SSL dari Reverse Proxy Vercel agar tidak terjadi 302 redirect loop
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
     $_SERVER['HTTPS'] = 'on';
+
+define( 'WP_HOME', 'https://osn-ujian-gamma.vercel.app' );
+define( 'WP_SITEURL', 'https://osn-ujian-gamma.vercel.app' );
 	
 // Nonaktifkan uncaught exception mysqli agar WordPress dapat mendeteksi database kosong tanpa crash
 mysqli_report(MYSQLI_REPORT_OFF);

@@ -1,4 +1,9 @@
 <?php
+// Tampilkan error langsung ke log Vercel untuk mendiagnosis
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 // Tangkap URI dan path yang diminta
 $uri  = $_SERVER['REQUEST_URI'] ?? '/';
 $path = parse_url($uri, PHP_URL_PATH);

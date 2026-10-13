@@ -41,6 +41,10 @@ define( 'WP_HTTP_BLOCK_EXTERNAL', false );
 
 // 5. Direktori Sementara Vercel
 define( 'WP_TEMP_DIR', '/tmp' );
+// Naikkan batas memori PHP untuk WordPress
+define( 'WP_MEMORY_LIMIT', '256M' );
+define( 'WP_MAX_MEMORY_LIMIT', '512M' );
+@ini_set( 'memory_limit', '256M' );
 
 
 /**

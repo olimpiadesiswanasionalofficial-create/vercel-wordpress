@@ -1,4 +1,19 @@
 <?php
+// Naikkan memory limit khusus serverless
+ini_set('memory_limit', '512M');
+
+// Tampilkan fatal error ke log Vercel jika terjadi crash
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+register_shutdown_function(function () {
+    $error = error_get_last();
+    if ($error !== null && in_array($error['type'], [E_ERROR, E_PARSE, E_CORE_ERROR, E_COMPILE_ERROR])) {
+        error_log("FATAL ERROR: {$error['message']} in {$error['file']} on line {$error['line']}");
+    }
+});
+
 // Tampilkan error langsung ke log Vercel untuk mendiagnosis
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
